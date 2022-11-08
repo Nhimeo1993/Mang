@@ -10,16 +10,17 @@
     <h2>Tìm giá trị trong mảng</h2>
       
     <script>
-        let soMuonTim = prompt("Nhập số muốn tìm:");
+        
         let numbersss = [-3, 4, 5, 6, 16, 50, -2];
-        let max = numbersss[0];
+        let min = numbersss[0];
         for (let i = 0 ;i<numbersss.length; i++){
-            if (max < numbersss[i]){
-                max = numbersss[i]
+            if (min > numbersss[i]){
+                min = numbersss[i]
                 
             }
-            alert("Giá trị lớn nhất trong mảng là: " + max);       
+                  
         }
+        alert("Giá trị nhỏ nhất trong mảng là: " + min); 
     </script>
 </body>
 </html>
