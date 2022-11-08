@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mảng 2 chiều</title>
+</head>
+<body>
+    Nhập số dòng :
+    <input type="number" name="Nhập số" id="nhapSo" /><br>
+    Nhập số cột :
+    <input type="number" name="Nhập số cột" id="nhapSoCot" /><br>
+    <button type="button" onclick="khoiTao()">Khởi tạo</button>
+    <div id="print"></div>
+    <script>
+        function khoiTao(){
+            let sodong = parseInt(document.getElementById"nhapSo".value);
+            let socot = parseInt(document.getElementById("nhapSoCot").value);
+            //khai báo mảng 2 chiều
+            let matran = new Array(sodong).fill(new Array(socot));
+            // Khởi tạo
+            let bang = document.createElement("table");
+            for(let iDong = 0; iDong < matran.length; iDong++){
+                let dong = document.createElement("tr");
+                for(let jCot =0; jCot< matran[iDong].length; jCot++){
+                    matran[iDong][jCot] = Math.floor(Math.random() * 100+1);
+                    let cot = document.createElement("td");
+                    cot.innerHTML = matran[iDong][jCot];
+                    dong.appendChild(cot);
+                }
+                bang.appendChild(dong);
+            }
+                document.getElementById("print").appendChild(bang);
+        }
+    </script>
+</body>
+</html>

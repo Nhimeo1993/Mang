@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thao tác với mảng</title>
+</head>
+<body>
+    <h2>Sample Screen</h2>
+    <input type="text" id="nhapmang"/>
+    <button type="button" onclick="themPhanTu()">Add</button>
+    <button type="button" onclick="hienThi()" >Display</button>
+    <div id="print"></div>
+    <script>
+        let phanTu = new Array();
+        function themPhanTu(){
+             let mang1 = parseInt(document.getElementById("nhapmang").value);       
+            phanTu.push(mang1);
+            console.log(phanTu);
+        }
+        function hienThi(){
+            let chuoi = "";
+           for(let i in phanTu){
+            chuoi += `Element ${i} = ${phanTu[i]}<br>`;
+            }
+            document.getElementById("print").innerHTML = phanTu;
+        }
+    </script>
+</body>
+</html>
